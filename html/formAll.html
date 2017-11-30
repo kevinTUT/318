@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单输入</title>
+	<link rel="stylesheet" href="../styles/formAll.css">
+</head>
+<body>
+	<form action="a.action" type="GET">
+		<h1>支付表单</h1>
+		<section>
+			<h2>个人信息</h2>
+			<fieldset>
+				<legend>性别</legend>
+				<ul>
+					<li>
+						<label for="nan">
+							<input type="radio" id="nan" name="sex">
+							男
+						</label>
+					</li>
+					<li>
+						<label for="nv">
+							<input type="radio" id="nv" name="sex">
+							女
+						</label>
+					</li>
+				</ul>
+			</fieldset>
+		</section>
+		<p>
+	      <label for="name">
+	        <span>Name: </span>
+	        <strong><abbr title="required">*</abbr></strong>
+	      </label>
+	      <input type="text" id="name" name="username">
+	    </p>
+	    <p>
+	      <label for="mail">
+	        <span>E-mail: </span>
+	        <strong><abbr title="required">*</abbr></strong>
+	      </label>
+	      <input type="email" id="mail" name="usermail">
+	    </p>
+	    <p>
+	      <label for="pwd">
+	        <span>Password: </span>
+	        <strong><abbr title="required">*</abbr></strong>
+	      </label>
+	      <input type="password" id="pwd" name="password">
+	    </p>
+	    <section>
+	    	<h1>支付信息</h1>
+	    	<p>
+	    		<label for="card">
+	    			<span>请选择：</span>
+	    		</label>
+	    		<select name="usercard" id="card">
+	    			<option value="1">人民银行</option>
+	    			<option value="2">工商银行</option>
+	    			<option value="3">招商银行</option>
+	    		</select>
+	    	</p>
+	    	<p>
+	    		<label for="number">
+			       <span>Card number:</span>
+			       <strong><abbr title="required">*</abbr></strong>
+			    </label>
+			    <input type="text" id="number" name="cardnumber">
+	    	</p>
+	    	<p>
+	    		<label for="date">
+			       <span>Expiration date:</span>
+			       <strong><abbr title="required">*</abbr></strong>
+			       <em>formatted as mm/yy</em>
+			    </label>
+			    <input type="date" id="date" name="expiration">
+	    	</p>
+	    </section>
+	    <p>
+	    	<button type="submit">提交</button>
+	    </p>
+	</form>
+</body>
+</html>

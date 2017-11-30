@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+	<style>
+		form{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			margin:auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			padding: 1em;
+			border: 2px solid #345342;
+			border-radius: 2em;
+			box-shadow: 3px 3px 1px black;
+		}
+		div+div{
+			margin-top: 1em;
+		}
+		label{
+			display: inline-block;
+			width: 70px;
+			text-align: right;
+		}
+		input,textarea{
+			font: 1em sans-serif;
+			width: 180px;
+			box-sizing: border-box;
+			border:1px solid #756546;
+
+		}
+		input:focus, textarea:focus {
+		  /* To give a little highlight on active elements */
+		  border-color: #000;
+		}
+
+		textarea {
+		  /* To properly align multiline text fields with their labels */
+		  vertical-align: top;
+
+		  /* To give enough room to type some text */
+		  height: 5em;
+		}
+
+		.button {
+		  /* To position the buttons to the same position of the text fields */
+		  padding-left: 110px; /* same size as the label elements */
+		}
+
+		button {
+		  /* This extra margin represent roughly the same space as the space
+		     between the labels and their text fields */
+		  margin-left: .5em;
+		}
+	</style>
+</head>
+<body>
+	<form action="exUser" method="GET">
+		<fieldset>
+			<legend>请输入您的信息</legend>
+			<div>
+				<label for="name">姓名：<abbr title="required">*</abbr></label>
+				<input type="text" id="name">
+			</div>
+			<div>
+				<label for="mail">邮箱：</label>
+				<input type="email" id="mail">
+			</div>
+			<div>
+				<label for="msg">注备:</label>
+				<textarea name="msgN" id="msg" cols="20" rows="5"></textarea>
+			</div>
+			<div class="button">
+				<button type="submit">提交</button>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>

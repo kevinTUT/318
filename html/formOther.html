@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单其他相关</title>
+</head>
+<body>
+	<form action="">
+		<select  id="groups" name="groups">
+		  <optgroup label="fruits">
+		    <option>Banana</option>
+		    <option selected>Cherry</option>
+		    <option>Lemon</option>
+		  </optgroup>
+		  <optgroup label="vegetables">
+		    <option>Carrot</option>
+		    <option>Eggplant</option>
+		    <option>Potato</option>
+		  </optgroup>
+		</select>
+
+		<select multiple id="multi" name="multi">
+		  <option>Banana</option>
+		  <option>Cherry</option>
+		  <option>Lemon</option>
+		</select>
+
+		<label for="myFruit">What's your favorite fruit?</label>
+		<input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+		<datalist id="mySuggestion">
+			 <option>Apple</option>
+			 <option>Banana</option>
+			 <option>Blackberry</option>
+			 <option>Blueberry</option>
+			 <option>Lemon</option>
+			 <option>Lychee</option>
+			 <option>Peach</option>
+			 <option>Pear</option>
+		</datalist>
+
+		<label for="myFruit">What is your favorite fruit? (With fallback)</label>
+		<input type="text" id="myFruit" name="fruit" list="fruitList">
+		    
+		<datalist id="fruitList">
+		  <label for="suggestion">or pick a fruit</label>
+		  <select id="suggestion" name="altFruit">
+		    <option>Apple</option>
+		    <option>Banana</option>
+		    <option>Blackberry</option>
+		    <option>Blueberry</option>
+		    <option>Lemon</option>
+		    <option>Lychee</option>
+		    <option>Peach</option>
+		    <option>Pear</option>
+		  </select>
+		</datalist>
+
+		<div>
+			<label for="carrots">选：</label>
+			<input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+		</div>
+		<div>
+			<label for="soup1"> 好:</label>
+			<input type="radio" checked id="soup1" name="meal">
+			<label for="soup2"> 坏:</label>
+			<input type="radio"  id="soup2" name="meal">
+		</div>
+		<div>
+			<label for="">数字</label>
+			<input type="number" min="1" max="10" step="2">
+			<label for="">滑条</label>
+			<input type="range" min="1" max="100" step="10">
+		</div>
+		<div>
+			<label for="beans">带值显示</label>
+			<input type="range" name="beans" id="beans" min="0" max="500" step="10">
+			<span class="beancount"></span>
+		</div>
+		<div>
+			<input type="datetime-local">
+			<input type="month">
+			<input type="week">
+			<input type="time">
+			<input type="date" min="2013-06-01" max="2013-08-31">
+		</div>
+		<div>
+			<input type="color">
+		</div>		
+		<div>
+			文件<input type="file">
+			隐藏<input type="hidden">隐藏
+
+			图片<input type="image" src="../images/002.jpg" width="80" height="30">
+			进度条<progress max="100" value="50">50%</progress>
+		</div>
+		<div>
+			仪表
+			<meter min="0" max="100" value="80" low="30" high="60" optimum="50">40</meter>
+		</div>	
+		<form method="post" enctype="multipart/form-data">
+		  <div>
+		    <label for="file">Choose a file</label>
+		    <input type="file" id="file" name="myFile">
+		  </div>
+		  <div>
+		    <button>Send the file</button>
+		  </div>
+		</form>
+		提交<button type="submit">A</button>
+		重置<button type="rest">B</button>
+		无<button type="button">C</button>
+	</form>
+	
+</body>
+</html>
+<script>
+	var beans = document.querySelector('#beans');
+	var count = document.querySelector('.beancount');
+
+	count.textContent = beans.value;
+
+	beans.oninput = function() {
+	  count.textContent = beans.value;
+	}
+</script>
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>robit</title>
+	<link rel="stylesheet" href="../styles/robit.css" type="text/css">
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  
+<script>
+if (window.location.href.indexOf("fullcpgrid") > -1) {
+  document.addEventListener('DOMContentLoaded', function() {
+    const original = document.createElement('iframe');
+    original.style.display = 'none';
+    document.body.appendChild(original);
+    window.requestAnimationFrame = original.contentWindow.requestAnimationFrame;
+  }, false);
+}
+</script>
+</head>
+<body>
+	<canvas></canvas>
+  <script src="../scripts/canvas.js"></script>
+</body>
+</html>
